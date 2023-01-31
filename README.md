@@ -1,6 +1,6 @@
 # Frontend Mentor - E-commerce product page solution
 
-This is a solution to the [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). 
 
 ## Table of contents
 
@@ -36,7 +36,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://github.com/ecommerce-website.io.git)
 
 ## My process
 
@@ -52,26 +52,42 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+CSS grid layouts
+
+Webflow
 
 To see how you can add code snippets, see below:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+
+ #items{
+    background-color: $Orange;
+    width: 25px;
+    height:15px;
+    border-radius: 40%;
+    text-align: center;
+    color: $White;
+    font-weight: 700;
+    padding-top: 1px;
+    font-size: 13px;
+    position: absolute;
+    left: 1.1em;
+    top: 2px;
+
 }
 ```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+switch (counter) {
+    case 0:
+     card.appendChild(cardPara);
+     divEl.classList.add('display');
+     cardImg.classList.add('display');
+        break;
+
 }
 ```
 
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
@@ -83,9 +99,9 @@ React Js
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/zaddytomany)
+- Website - [Joseph Kingsley](https://www.your-site.com)
+- Frontend Mentor - [@kvnqsley](https://github.com/ecommerce-website.io)
+- Twitter - [@zaddytomany](https://www.twitter.com/zaddytomany)
 
 **Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
