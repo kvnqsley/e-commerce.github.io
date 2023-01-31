@@ -4,7 +4,11 @@ const count=document.querySelector('#value')
 const cartBtn=document.querySelector('#cart-btn');
 const items= document.querySelector('#items');
 const card=document.querySelector('.card');
-const cardPara=document.querySelector('.card p')
+const cardPara=document.querySelector('.card p');
+const divEl=document.querySelector('#active-div');
+const cardImg=document.querySelector('.card img');
+const span1=document.querySelector('#span-1');
+const span2 =document.querySelector('#span-2');
 let counter =0;
 
 plusBtn.addEventListener('click',()=>{
@@ -31,52 +35,35 @@ cartBtn.addEventListener(
 items.textContent=counter;
 if (counter>0) {
     items.classList.remove('display');
-  addedToCart()
+  addedToCart();
+  countClick()
     
 }
 else{
     items.classList.add('display')
 }
+switch (counter) {
+    case 0:
+     card.appendChild(cardPara);
+     divEl.classList.add('display');
+     cardImg.classList.add('display');
+        break;
+
+}
     }
 );
 function addedToCart() {
+     divEl.classList.remove('display');
+    cardImg.classList.remove('display');
+
+span1.textContent=counter;
+span2.textContent=('$' + 125 *counter+'.00')
+}
+var click =0
+function countClick() {
+    click++
+  if (click===1) {
     card.removeChild(cardPara);
+  }
 
-
-    const cardImg =document.createElement('img')
-    cardImg.setAttribute('src','/images/image-product-1-thumbnail.jpg')
-    card.appendChild(cardImg)
-    
-    const divEl=document.createElement('div');
-    divEl.setAttribute('id','active-div')
-    card.appendChild(divEl);
-
-
-    const firstText=document.createElement('h4');
-    const headerText =document.createTextNode('Fall Limited Edition Sneakers');
-    firstText.appendChild(headerText);
-    divEl.appendChild(firstText);
-
-    const secondText=document.createElement('h6');
-    const subText =document.createTextNode('$125.00 x ');
-    secondText.appendChild(subText);
-    divEl.appendChild(secondText);
- 
-   
-    
-    const span1 =document.createElement('span');
-    const spanTxt1= document.createTextNode(counter);
-    span1.appendChild(spanTxt1)
-    divEl.appendChild(span1);
-
-    const span2 =document.createElement('span');
-    const spanTxt2= document.createTextNode('$' + 125 *counter+'.00')
-    span2.appendChild(spanTxt2)
-    divEl.appendChild(span2);
-
-
-    const checkout=document.createElement('div');
-    const checkoutText =document.createTextNode('Checkout');
-    checkout.appendChild(checkoutText);
-    divEl.appendChild(checkout)
 }

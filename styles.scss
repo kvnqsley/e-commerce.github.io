@@ -80,8 +80,9 @@ nav{
 }
 #avatar{
     width: 2em;
-    height: 2em;
-    margin-top: .5em;
+    height: 1.7em;
+    position: relative;
+    top: .3em;
 }
 .nav-img img:nth-child(2):hover{
     border: 2px solid $Orange;
@@ -306,7 +307,6 @@ border: none;
 }
 #cart-btn{
     background-color: $Orange;
-    opacity: .7;
     font-weight: 700;
     border-radius: 1em;
     cursor: pointer;
