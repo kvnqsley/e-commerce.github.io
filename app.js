@@ -22,6 +22,16 @@ const sliderImg1=document.querySelector('#slider-img-1');
 const sliderImg2=document.querySelector('#slider-img-2');
 const sliderImg3=document.querySelector('#slider-img-3');
 const sliderImg4=document.querySelector('#slider-img-4');
+const menuBtn=document.querySelector('#menu');
+const closeBtn=document.querySelector('#close-side-bar');
+const mobileToggle=document.querySelector('#mobile-view');
+const sideNav=document.querySelector('nav ul');
+const mainEl =document.querySelector('main');
+const footerEl =document.querySelector('footer');
+const navImg =document.querySelector('.nav-img')
+//All necessary Dom objects selected
+
+// Starting the items count
 let counter =0;
 
 plusBtn.addEventListener('click',()=>{
@@ -98,7 +108,7 @@ next.classList.remove('dim');
 )
 
 var productIndex=0;
-var sliderImages=[sliderImg1,sliderImg2,sliderImg3,sliderImg4]
+var sliderImages=[sliderImg1,sliderImg2,sliderImg3,sliderImg4,navImg]
 next.addEventListener('click',
 ()=>{
   productIndex++;
@@ -161,3 +171,31 @@ switch (productIndex) {
   }
 }
 
+//for mobile design
+
+// if (window.innerWidth<=600) {
+//   sideNav.setAttribute('class','display')
+// }
+mobileToggle.addEventListener(
+  'click',()=>{
+    menuBtn.classList.toggle('display');
+    closeBtn.classList.toggle('display');
+    // app.classList.toggle('dim');
+ 
+
+    //selecting all components to dim when mobile menu is triggered
+const dimAll=[mainEl,footerEl,lightbox,];
+dimAll.forEach(element => {
+  element.classList.toggle('dim')
+});
+  if (menuBtn.classList.contains('display')===true) {
+    sideNav.classList.add('nav-translate')
+    
+  }
+  else{
+    sideNav.classList.remove('nav-translate')
+  }
+    
+  
+  }
+)

@@ -69,6 +69,10 @@ nav{
     cursor: pointer;
     left: 1em;
 }
+#menu{
+    position: absolute;
+    transition: 2s;
+}
 .bar{
     width: 99%;
     height: 1px;
@@ -142,11 +146,12 @@ nav ul li:hover::after{
 }
 .display{
     display: none;
+  
 }
 main{
     display: flex;
     justify-content: space-around;
-
+min-height: 100vh;
 }
 aside{
     position: relative;
@@ -170,7 +175,7 @@ aside{
     left: 28em;
     z-index: 100;
     position: relative;
-    transition:ease-in 2s 4s;
+
 }
 
 #toggle{
@@ -194,6 +199,7 @@ aside{
     border-radius: 1em;
   position: absolute;
   top: 2em;
+  transition:ease-in 1s .3s;
 }
 .slider-dir{
     position: absolute;
@@ -439,29 +445,53 @@ border: none;
 
 //mobile view
 
-@media screen and (width<376px){
+@media screen and (width<376px) {
   #mobile-view{
+       display: block;
+     
+       z-index: 1000;
+   }
+   .nav-translate{
+  
+       transform: translateX(0);
        display: block;
    }
     .app{
         width: 376px;
-        // overflow: hidden;
-     height: 100vh;
+height: 100%;
      margin: 0;
      padding: 0;
     }
     nav{
-        z-index: 100;
+        // z-index: 100;
+     
+    }
+    nav ul{
+        flex-direction: column ;
+        position: absolute;
+        z-index: 999;
+        top:0;
+       background-color: $White;
+       width: 200px;
+       min-height:200vh;
+       padding: 5em 1em 0 0;
+       gap: 1em;
+  transform: translateX(-20em);
+  display: none;
+  transition: display 2s;
+  
     }
     .bar{
         display: none;
     }
-    nav ul li {
-        display: none;
+    nav li a{
+        color: $Very-dark-blue;
+      font-weight: 700;
     }
+ 
     #nav-logo{
         height: 20px;
-        margin-top: 8px;
+        margin: 1.5em 0 0 3em;
     }
 .nav-img{
         width: 70%;
@@ -485,31 +515,36 @@ width: 370px;
 #lightbox{
     display: block;
    left: 0;
-   height: 60vh;
+   position: absolute;
+top: 4em;
    width: 100%;
-   z-index: -1;
+   z-index: 100;
+   height: 300px;
 }
 #slider{
     width:350px;
-        height:70% ;
+        height:150% ;
     margin-top: 2em;
     z-index: -1;
 }
 .slider-img{
-    height: 80%;
+    height: 160%;
     border-radius: 0;
     left: -7em;
-   width: 500px;
-   top: 1em;
+   min-width: 600px;
+   top: -6em;
+   object-fit: cover;
+   transform: scale(.6);
    z-index: -1;
 }
 #arr-1{
-    top:30%;
+    top:40%;
     left: 0;
 }
 #arr-2{
-    top: 30%;
+    top: 40%;
     right: 0;
+
 }
 
 .thumbnails{
@@ -564,5 +599,13 @@ section h6{
     right: -2.5em;
     width: 330px;
     top:5em;
+    box-shadow: none;
+    z-index: 998;
 }
+// *{
+//     outline: 2px solid blue;
+// }
 }
+// @media screen and (width<425px){
+
+// }
