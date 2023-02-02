@@ -15,6 +15,16 @@ nav {
   padding-bottom: 0.6em;
   display: flex;
   justify-content: space-between;
+  position: relative;
+}
+
+#mobile-view {
+  display: none;
+  margin: 0 auto;
+  position: absolute;
+  top: 40%;
+  cursor: pointer;
+  left: 1em;
 }
 
 .bar {
@@ -122,8 +132,6 @@ aside {
 }
 
 #lightbox {
-  position: absolute;
-  left: 600px;
   top: -41em;
   width: 600px;
   height: 600px;
@@ -326,12 +334,20 @@ section {
   font-size: 12px;
   color: hsl(26deg, 100%, 55%);
   text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: hsl(219deg, 9%, 45%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
 }
 
 #title {
   width: 400px;
   font-weight: 700;
+  color: hsl(220deg, 13%, 13%);
   font-size: 37px;
+  background-color: hsl(25deg, 100%, 94%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
 }
 
 section h6 {
@@ -383,16 +399,15 @@ section h6 {
   border: none;
 }
 
-#add ul li:nth-child(2) {
+#value {
   margin-top: 0.7em;
 }
 
-#add ul button {
+#plus, #minus {
   color: hsl(26deg, 100%, 55%);
   font-size: 2em;
   cursor: pointer;
   border: none;
-  opacity: 0.6;
   border-radius: 1em;
 }
 
@@ -418,4 +433,128 @@ section h6 {
   position: absolute;
   left: 1.1em;
   top: 0em;
+}
+
+@media screen and (width < 376px) {
+  #mobile-view {
+    display: block;
+  }
+  .app {
+    width: 376px;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  nav {
+    z-index: 100;
+  }
+  .bar {
+    display: none;
+  }
+  nav ul li {
+    display: none;
+  }
+  #nav-logo {
+    height: 20px;
+    margin-top: 8px;
+  }
+  .nav-img {
+    width: 70%;
+    margin-right: -1em;
+  }
+  #top-cart-container {
+    width: 20%;
+  }
+  #main-img {
+    display: none;
+  }
+  section {
+    margin: 100% 0 0 0%;
+    height: 100vh;
+    width: 370px;
+  }
+  #toggle {
+    display: none;
+  }
+  #lightbox {
+    display: block;
+    left: 0;
+    height: 60vh;
+    width: 100%;
+    z-index: -1;
+  }
+  #slider {
+    width: 350px;
+    height: 70%;
+    margin-top: 2em;
+    z-index: -1;
+  }
+  .slider-img {
+    height: 80%;
+    border-radius: 0;
+    left: -7em;
+    width: 500px;
+    top: 1em;
+    z-index: -1;
+  }
+  #arr-1 {
+    top: 30%;
+    left: 0;
+  }
+  #arr-2 {
+    top: 30%;
+    right: 0;
+  }
+  .thumbnails {
+    display: none;
+  }
+  #header {
+    margin-top: -2em;
+  }
+  #title {
+    margin-top: 0;
+    width: 360px;
+  }
+  section h6 {
+    font-size: 1em;
+    line-height: 1.3em;
+    color: hsl(219deg, 9%, 45%);
+    font-weight: 400;
+  }
+  .discount {
+    width: 70%;
+  }
+  .discount p {
+    margin-left: -3em;
+  }
+  #crossed {
+    margin: -2.7em 0 0 0em;
+    float: right;
+    width: 120px;
+  }
+  #add {
+    position: relative;
+    top: 3em;
+    width: 200px;
+  }
+  #add ul {
+    justify-content: space-between;
+    width: 300px;
+    margin-left: 1em;
+  }
+  #cart-btn {
+    position: absolute;
+    top: 6em;
+    width: 320px;
+    height: 4em;
+    margin-left: 1em;
+  }
+  #items {
+    left: -0.4em;
+  }
+  .card {
+    right: -2.5em;
+    width: 330px;
+    top: 5em;
+  }
 }/*# sourceMappingURL=styles.css.map */
