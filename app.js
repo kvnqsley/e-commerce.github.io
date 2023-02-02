@@ -17,8 +17,11 @@ const lightbox=document.querySelector('#lightbox')
 const slider = document.querySelector('#slider');
 const app = document.querySelector('.app');
 const next=document.getElementById('arr-2');
+const prev=document.getElementById('arr-1')
 const sliderImg1=document.querySelector('#slider-img-1');
-const sliderImg2=document.querySelector('#slider-img-2')
+const sliderImg2=document.querySelector('#slider-img-2');
+const sliderImg3=document.querySelector('#slider-img-3');
+const sliderImg4=document.querySelector('#slider-img-4');
 let counter =0;
 
 plusBtn.addEventListener('click',()=>{
@@ -89,19 +92,72 @@ app.classList.add('dim')
 toggle.addEventListener(
 'click',()=>{
 lightbox.classList.add('display');
-app.classList.remove('dim')
-
+app.classList.remove('dim');
+next.classList.remove('dim');
 }
 )
 
-let productIndex=0;
-var sliderImages=[sliderImg1,sliderImg2]
+var productIndex=0;
+var sliderImages=[sliderImg1,sliderImg2,sliderImg3,sliderImg4]
 next.addEventListener('click',
 ()=>{
-  console.log(sliderImages[1]);
   productIndex++;
-  sliderImages[productIndex].classList.remove('fade')
-
+  if (productIndex>3) {
+    productIndex=3;
+ 
+  }
+  else{
+    sliderFunc.onNext();
+  }
+  sliderFunc.onReset();
 }
 )
+prev.addEventListener('click',
+()=>{
+  productIndex--;
+  if (productIndex<0) {
+    productIndex=0;
+ sliderFunc.onReset();
+  }
+  else{
+    sliderFunc.onPrev();
+  }
+  sliderFunc.onReset();
+}
+)
+
+// showing and hiding images for the slider
+const sliderFunc={
+  onNext:function () {
+    sliderImages[productIndex-1].classList.remove('show');
+    sliderImages[productIndex].classList.remove('default')
+    sliderImages[productIndex].classList.add('show');
+  },
+  onPrev:function () {
+    sliderImages[productIndex].classList.add('show');
+    sliderImages[productIndex+1].classList.remove('show');
+    sliderImages[productIndex+1].classList.add('default');
+  },
+  onReset:function () {
+
+switch (productIndex) {
+  case 0:
+    prev.classList.add('dim')
+    break;
+    case 1:
+      prev.classList.remove('dim')
+      next.classList.remove('dim');
+      break;
+    case 2:
+      prev.classList.remove('dim')
+      next.classList.remove('dim');  
+      break;
+    case 3:
+      next.classList.add('dim');
+         
+      break;
+    
+}
+  }
+}
 

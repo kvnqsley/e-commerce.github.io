@@ -13,7 +13,7 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body>
+<body loading='lazy'>
   <div class="app">
 <nav>
  <ul>
@@ -25,21 +25,25 @@
    <li> <a>Contact</a>  </li>
  </ul>
    <div class="nav-img">
-    <img id="top-cart" src="/images/icon-cart.svg" alt="cart">
-    <img id='avatar' src="/images/image-avatar.png" alt="">
-    <p id="items" class="display"></p>
-    <div class="card">
-      <h3>Cart</h3>
-      <img class="display " src="./images/image-product-1-thumbnail.jpg" alt="">
-      <div class="display" id="active-div">
-        <h4>Fall Limited Edition sneakers</h4>
-        <h6>$125.00 x </h6>
-        <span id="span-1"></span>
-        <span id="span-2"></span>
-        <div>Checkout</div>
-      </div>
-      <p>Your cart is empty</p>
+     <div id="top-cart-container">
+      <img id="top-cart" src="/images/icon-cart.svg" alt="cart">
+      <div class="card">
+        <h3>Cart</h3>
+        <img class="display " src="./images/image-product-1-thumbnail.jpg" alt="">
+        <div class="display" id="active-div">
+          <h4>Fall Limited Edition sneakers</h4>
+          <h6>$125.00 x </h6>
+          <span id="span-1"></span>
+          <span id="span-2"></span>
+          <button>Checkout</button>
         </div>
+        <p>Your cart is empty</p>
+          </div>
+     </div>
+    
+    <img id='avatar' src="/images/image-avatar.png" alt="profile">
+    <p id="items" class="display"></p>
+   
    </div>
    <div class="bar"></div>
 
@@ -50,7 +54,7 @@
 </nav>
  <main>
    <aside>
-<img id="main-img" src="/images/image-product-1.jpg" alt="">
+<img loading='lazy'  id="main-img" src="/images/image-product-1.jpg" alt="">
 
 <div class="thumbnails">
   <img src="/images/image-product-1-thumbnail.jpg"  id="thumb-1"  alt="">
@@ -102,11 +106,13 @@
     <div id="toggle"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="white" fill-rule="evenodd"/></svg>
     </div>
     <div id="slider">
-      <img src="./images/image-product-1.jpg" class="slider-img" id="slider-img-1" alt="">
-      <img src="./images/image-product-2.jpg" class="slider-img fade" id="slider-img-2" alt="">
-      <div class="slider-dir" id="arr-1"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+      <img src="./images/image-product-1.jpg" class="slider-img show" id="slider-img-1" alt="">
+      <img src="./images/image-product-2.jpg" class="slider-img default" id="slider-img-2" alt="">
+      <img src="./images/image-product-3.jpg" class="slider-img default" id="slider-img-3" alt="">
+      <img src="./images/image-product-4.jpg" class="slider-img default" id="slider-img-4" alt="">
+      <div class="slider-dir dim" id="arr-1"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
       </div>
-      <div class="slider-dir" id="arr-2"><svg width="10" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg></div>
+      <div class="slider-dir " id="arr-2"><svg width="10" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg></div>
       <div class="thumbnails"  id="lightbox-thumbnails">
         <img src="/images/image-product-1-thumbnail.jpg" alt="">
         <img src="/images/image-product-2-thumbnail.jpg" alt="">

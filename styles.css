@@ -29,6 +29,8 @@ nav {
 #top-cart, #avatar {
   height: 20px;
   cursor: pointer;
+  margin-right: 20px;
+  padding: 0 auto;
 }
 
 .nav-img {
@@ -36,16 +38,24 @@ nav {
   position: relative;
 }
 
-.nav-img img {
-  margin-right: 20px;
-  padding: 0 auto;
+#top-cart-container {
+  display: inline-block;
+  width: 50px;
+  height: 70px;
+  position: relative;
+}
+
+#top-cart {
+  position: absolute;
+  right: 0;
+  top: 1.2em;
 }
 
 #avatar {
   width: 2em;
   height: 1.7em;
   position: relative;
-  top: 0.3em;
+  top: -1.8em;
 }
 
 .nav-img img:nth-child(2):hover {
@@ -60,11 +70,12 @@ ul {
 }
 
 nav ul li {
-  margin-left: 20px;
+  margin: 5px 0 0 20px;
   color: hsl(220deg, 14%, 75%);
   cursor: pointer;
   position: relative;
-  transition: 2s;
+  transition: 1s;
+  font-size: 1.3em;
 }
 
 nav ul li:hover {
@@ -78,7 +89,7 @@ nav ul li::after {
   height: 2px;
   background-color: hsl(26deg, 100%, 55%);
   left: 0.6em;
-  top: 2.9em;
+  top: 2em;
   display: none;
 }
 
@@ -157,27 +168,16 @@ aside {
   cursor: pointer;
 }
 
-.fade {
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.default {
+  transform: translateX(5em);
   opacity: 0;
 }
 
-@-webkit-keyframes fade {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes fade {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
 #arr-1 {
   left: -1em;
   top: 40%;
@@ -218,6 +218,8 @@ aside {
 
 .thumbnails img:hover {
   opacity: 0.6;
+  transform: scale(1.2);
+  transition: 0.3s;
 }
 
 .thumbnails img:not(:first-child) {
@@ -229,7 +231,7 @@ section {
   position: relative;
 }
 
-#top-cart:hover ~ .card {
+#top-cart-container:hover .card {
   display: block;
 }
 
@@ -243,7 +245,7 @@ section {
   background-color: hsl(0deg, 0%, 100%);
   box-shadow: hsl(220deg, 14%, 75%) -13px 20px 20px 0px;
   display: none;
-  z-index: 1;
+  z-index: 100;
   border-radius: 1em;
 }
 
@@ -302,18 +304,19 @@ section {
   top: 7.4em;
 }
 
-#active-div div {
+#active-div button {
   position: absolute;
   top: 12.1em;
   left: 1em;
-  height: 24px;
+  height: 30px;
   background-color: hsl(26deg, 100%, 55%);
   color: hsl(0deg, 0%, 100%);
   border: none;
   font-weight: 700;
   border-radius: 7px;
-  padding: 0.5em;
+  padding: 1em 1em -1em 0;
   width: 250px;
+  cursor: pointer;
   text-align: center;
   font-size: 13px;
 }
@@ -414,5 +417,5 @@ section h6 {
   font-size: 13px;
   position: absolute;
   left: 1.1em;
-  top: -1em;
+  top: 0em;
 }/*# sourceMappingURL=styles.css.map */
