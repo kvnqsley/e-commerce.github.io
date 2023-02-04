@@ -4,19 +4,15 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
 
 ## Table of contents
 
-
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 
-## Overview
+
 
 ### The challenge
 
@@ -29,16 +25,13 @@ Users should be able to:
 - Add items to the cart
 - View the cart and remove items from it
 
-### Screenshot
+
 
 
 
 ### Links
+- Live Site URL: [(https://main--superb-rabanadas-f3933e.netlify.app/index.html)]
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://github.com/ecommerce-website.io.git)
-
-## My process
 
 ### Built with
 
@@ -94,13 +87,9 @@ switch (counter) {
 React Js
 
 
-
-
-
 ## Author
 
-- Website - [Joseph Kingsley](https://www.your-site.com)
+- Website - [Joseph Kingsley](https://main--superb-rabanadas-f3933e.netlify.app/index.html)
 - Frontend Mentor - [@kvnqsley](https://github.com/ecommerce-website.io)
 - Twitter - [@zaddytomany](https://www.twitter.com/zaddytomany)
-
 *
