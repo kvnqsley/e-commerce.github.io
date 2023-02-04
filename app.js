@@ -8,9 +8,8 @@ const cardPara=document.querySelector('.card p');
 const divEl=document.querySelector('#active-div');
 const cardImg=document.querySelector('.card img');
 const span1=document.querySelector('#span-1');
-const thumb1=document.querySelector('#thumb-1');
-const thumb2=document.querySelector('#thumb-2');
-const thumb3=document.querySelector('#thumb-3');
+const thumbnails=document.querySelectorAll('.thumbnail');
+const sliderThumbnails=document.querySelectorAll('.slider-thumbnail');
 const toggle =document.querySelector('#toggle')
 const span2 =document.querySelector('#span-2');
 const lightbox=document.querySelector('#lightbox')
@@ -55,6 +54,7 @@ minusBtn.addEventListener('click',()=>{
 }
 )
 
+//display card with orders
 cartBtn.addEventListener(
     'click',()=>{
 items.textContent=counter;
@@ -82,7 +82,7 @@ switch (counter) {
 function addedToCart() {
      divEl.classList.remove('display');
     cardImg.classList.remove('display');
-
+cardPara.classList.add('display')
 span1.textContent=counter;
 span2.textContent=('$' + 125 *counter+'.00')
 }
@@ -96,13 +96,51 @@ function countClick() {
 }
 
 //lightbox 
-thumb1.addEventListener(
-  'click',()=>{
-lightbox.classList.remove('display');
-app.classList.add('dim')
-
+for (const thumbnail of thumbnails) {
+  thumbnail.addEventListener(
+    'click',()=>{
+  lightbox.classList.remove('display');
+  app.classList.add('dim');
+  
+  switch (thumbnail) {
+    case thumbnails[1]:
+      sliderImg1.classList.remove('show');
+      sliderImg2.classList.remove('default')
+      sliderImg2.classList.add('show');
+      thumbactive(sliderThumbnails[1]);
+   productIndex=1
+      break;
+      case thumbnails[2]:
+        sliderImg2.classList.remove('show');
+        sliderImg3.classList.remove('default')
+        sliderImg3.classList.add('show');
+        thumbactive(sliderThumbnails[2]);
+         productIndex =2;
+        break;
+        case thumbnails[3]:
+          sliderImg3.classList.remove('show');
+          sliderImg4.classList.remove('default')
+          sliderImg4.classList.add('show');
+          thumbactive(sliderThumbnails[3]);
+          productIndex =3;
+          break;
+        default:
+          thumbactive(sliderThumbnails[0]);
+          break;
   }
-);
+    }
+  );
+}
+
+
+  function thumbactive(thumbnail) {
+  return thumbnail.classList.add('thumbnail-effect');
+
+    
+  }
+
+
+
 toggle.addEventListener(
 'click',()=>{
 lightbox.classList.add('display');
@@ -139,7 +177,7 @@ prev.addEventListener('click',
   sliderFunc.onReset();
 }
 )
-//display card with orders
+
 
 
 // showing and hiding images for the slider
@@ -148,11 +186,15 @@ const sliderFunc={
     sliderImages[productIndex-1].classList.remove('show');
     sliderImages[productIndex].classList.remove('default')
     sliderImages[productIndex].classList.add('show');
+    thumbactive(sliderThumbnails[productIndex]);
+    sliderThumbnails[productIndex-1].classList.remove('thumbnail-effect')
   },
   onPrev:function () {
     sliderImages[productIndex].classList.add('show');
     sliderImages[productIndex+1].classList.remove('show');
     sliderImages[productIndex+1].classList.add('default');
+    thumbactive(sliderThumbnails[productIndex]);
+     sliderThumbnails[productIndex+1].classList.remove('thumbnail-effect');
   },
   onReset:function () {
 
@@ -179,9 +221,7 @@ switch (productIndex) {
 
 //for mobile design
 
-// if (window.innerWidth<=600) {
-//   sideNav.setAttribute('class','display')
-// }
+
 mobileToggle.addEventListener(
   'click',()=>{
     menuBtn.classList.toggle('display');
@@ -223,6 +263,7 @@ delBtn.addEventListener('click',
   divEl.classList.add('display');
   cardImg.classList.add('display');
   card.appendChild(cardPara);
+  cardPara.classList.remove('display')
 span1.textContent='';
 span2.textContent='';
 items.classList.add('display')

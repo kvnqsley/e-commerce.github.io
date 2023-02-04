@@ -269,6 +269,12 @@ aside{
      transform: scale(1.2);
     transition: .3s;
 }
+.thumbnail-effect{
+    opacity: .6;
+    transform: scale(1.2);
+   transition: .3s;
+}
+
 .thumbnails img:not(:first-child){
     margin-left: 5em;
 }
