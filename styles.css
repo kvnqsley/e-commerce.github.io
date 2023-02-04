@@ -14,7 +14,7 @@ nav {
   height: 60px;
   padding-bottom: 0.6em;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   position: relative;
 }
 
@@ -78,10 +78,11 @@ nav {
   border-radius: 50%;
 }
 
-ul {
+nav ul {
   display: flex;
   justify-content: flex-start;
   list-style: none;
+  flex-grow: 1;
 }
 
 nav ul li {
@@ -100,17 +101,25 @@ nav ul li:hover {
 nav ul li::after {
   content: "";
   position: absolute;
-  width: 34px;
-  height: 2px;
+  width: 100%;
+  height: 4px;
   background-color: hsl(26deg, 100%, 55%);
-  left: 0.6em;
-  top: 2em;
+  left: 0.2em;
+  top: 1.8em;
   display: none;
 }
 
 nav ul li:hover::after {
   display: block;
   transition: 4s;
+}
+
+#nav-logo {
+  margin-top: 1em;
+}
+
+.nav-img, #nav-logo, nav ul {
+  min-width: 200px;
 }
 
 .display {
@@ -270,8 +279,9 @@ section {
 
 #active-div h6 {
   color: hsl(219deg, 9%, 45%);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
+  margin-top: 1.7em;
 }
 
 .card img {
@@ -303,11 +313,11 @@ section {
 
 .card span:nth-child(3) {
   color: hsl(219deg, 9%, 45%);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   margin-left: 5em;
   position: absolute;
-  top: 10.1em;
+  top: 8.4em;
 }
 
 .card span:nth-child(4) {
@@ -321,7 +331,7 @@ section {
 #active-div button {
   position: absolute;
   top: 12.1em;
-  left: 1em;
+  left: 2em;
   height: 30px;
   background-color: hsl(26deg, 100%, 55%);
   color: hsl(0deg, 0%, 100%);
@@ -329,7 +339,7 @@ section {
   font-weight: 700;
   border-radius: 7px;
   padding: 1em 1em -1em 0;
-  width: 250px;
+  width: 280px;
   cursor: pointer;
   text-align: center;
   font-size: 13px;
@@ -354,6 +364,13 @@ section {
   background-color: hsl(25deg, 100%, 94%);
   -webkit-background-clip: text;
   -moz-background-clip: text;
+}
+
+#delete-icon {
+  position: absolute;
+  right: 1em;
+  bottom: 43%;
+  cursor: pointer;
 }
 
 section h6 {
@@ -398,6 +415,9 @@ section h6 {
   padding: 0 0.3em;
   width: 9em;
   height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
 }
 
 #add ul li {
@@ -406,7 +426,7 @@ section h6 {
 }
 
 #value {
-  margin-top: 0.7em;
+  padding-top: 0.7em;
 }
 
 #plus, #minus {
@@ -415,6 +435,7 @@ section h6 {
   cursor: pointer;
   border: none;
   border-radius: 1em;
+  background-color: transparent;
 }
 
 #cart-btn {
@@ -441,7 +462,7 @@ section h6 {
   top: 0em;
 }
 
-@media screen and (width < 376px) {
+@media screen and (width: 375px) {
   #mobile-view {
     display: block;
     z-index: 1000;
@@ -482,11 +503,19 @@ section h6 {
     margin: 1.5em 0 0 3em;
   }
   .nav-img {
-    width: 70%;
-    margin-right: -1em;
+    min-width: 40px;
+    margin-left: 4em;
+    flex-grow: 1;
+  }
+  #avatar {
+    top: -3.6em;
   }
   #top-cart-container {
     width: 20%;
+    margin-top: 0.2em;
+  }
+  .op {
+    opacity: 0;
   }
   #main-img {
     display: none;
@@ -578,7 +607,158 @@ section h6 {
     margin-left: 1em;
   }
   #items {
-    left: -0.4em;
+    left: -2em;
+  }
+  .card {
+    right: -2.5em;
+    width: 330px;
+    top: 5em;
+    box-shadow: none;
+    z-index: 998;
+  }
+}
+@media screen and (width: 414px) {
+  .app {
+    width: 414px;
+  }
+  #mobile-view {
+    display: block;
+    z-index: 1000;
+  }
+  .nav-translate {
+    transform: translateX(0);
+    display: block;
+  }
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    background-color: hsl(0deg, 0%, 100%);
+    width: 200px;
+    min-height: 200vh;
+    padding: 5em 1em 0 0;
+    gap: 1em;
+    transform: translateX(-20em);
+    display: none;
+    transition: display 2s;
+  }
+  .bar {
+    display: none;
+  }
+  nav li a {
+    color: hsl(220deg, 13%, 13%);
+    font-weight: 700;
+  }
+  #nav-logo {
+    height: 20px;
+    margin: 1.5em 0 0 3em;
+  }
+  .nav-img {
+    min-width: 40px;
+    margin-left: 101px;
+  }
+  #avatar {
+    top: -3.6em;
+  }
+  #top-cart-container {
+    width: 20%;
+    margin-top: 0.2em;
+  }
+  .op {
+    opacity: 0;
+  }
+  #main-img {
+    display: none;
+  }
+  section {
+    margin: 120% 0 0 0%;
+    height: 100vh;
+    width: 370px;
+  }
+  #toggle {
+    display: none;
+  }
+  #lightbox {
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 4em;
+    width: 100%;
+    z-index: 100;
+    height: 300px;
+  }
+  #slider {
+    width: 350px;
+    height: 150%;
+    margin: 0;
+    z-index: -1;
+  }
+  .slider-img {
+    height: 100%;
+    border-radius: 0;
+    left: -7em;
+    min-width: 600px;
+    top: 5em;
+    -o-object-fit: contain;
+       object-fit: contain;
+    transform: scale(1.5);
+    z-index: -1;
+  }
+  #arr-1 {
+    top: 60%;
+    left: 0;
+  }
+  #arr-2 {
+    top: 60%;
+    right: 0;
+  }
+  .thumbnails {
+    display: none;
+  }
+  #header {
+    margin-top: -2em;
+  }
+  #title {
+    margin-top: 0;
+    width: 360px;
+  }
+  section h6 {
+    font-size: 1em;
+    line-height: 1.3em;
+    color: hsl(219deg, 9%, 45%);
+    font-weight: 400;
+  }
+  .discount {
+    width: 70%;
+  }
+  .discount p {
+    margin-left: -3em;
+  }
+  #crossed {
+    margin: -2.7em 0 0 0em;
+    float: right;
+    width: 120px;
+  }
+  #add {
+    position: relative;
+    top: 3em;
+    width: 200px;
+  }
+  #add ul {
+    justify-content: space-between;
+    width: 300px;
+    margin-left: 1em;
+  }
+  #cart-btn {
+    position: absolute;
+    top: 6em;
+    width: 320px;
+    height: 4em;
+    margin-left: 1em;
+  }
+  #items {
+    left: -2em;
   }
   .card {
     right: -2.5em;

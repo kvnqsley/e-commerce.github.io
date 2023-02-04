@@ -28,7 +28,10 @@ const mobileToggle=document.querySelector('#mobile-view');
 const sideNav=document.querySelector('nav ul');
 const mainEl =document.querySelector('main');
 const footerEl =document.querySelector('footer');
-const navImg =document.querySelector('.nav-img')
+const navImg =document.querySelector('.nav-img');
+const topCart=document.querySelector('#top-cart-container');
+const delBtn= document.querySelector('#delete-icon')
+
 //All necessary Dom objects selected
 
 // Starting the items count
@@ -52,14 +55,15 @@ minusBtn.addEventListener('click',()=>{
 }
 )
 
-
 cartBtn.addEventListener(
     'click',()=>{
 items.textContent=counter;
 if (counter>0) {
     items.classList.remove('display');
   addedToCart();
-  countClick()
+  countClick();
+  
+
     
 }
 else{
@@ -135,6 +139,8 @@ prev.addEventListener('click',
   sliderFunc.onReset();
 }
 )
+//display card with orders
+
 
 // showing and hiding images for the slider
 const sliderFunc={
@@ -199,3 +205,25 @@ dimAll.forEach(element => {
   
   }
 )
+
+if (window.innerWidth<=600) {
+  topCart.addEventListener(
+    'click',()=>{
+  
+      card.classList.toggle('op');
+    
+    }
+  )
+}
+
+
+//deleting items rom the basket
+delBtn.addEventListener('click',
+()=>{
+  divEl.classList.add('display');
+  cardImg.classList.add('display');
+  card.appendChild(cardPara);
+span1.textContent='';
+span2.textContent='';
+items.classList.add('display')
+})
