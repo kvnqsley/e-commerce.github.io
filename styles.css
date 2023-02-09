@@ -468,12 +468,13 @@ section h6 {
   top: 0em;
 }
 
-@media screen and (width: 375px) {
+@media screen and (max-width: 600px) {
   #mobile-view {
     display: block;
     z-index: 1000;
   }
   .nav-translate {
+    opacity: 1;
     transform: translateX(0);
     display: block;
   }
@@ -496,6 +497,7 @@ section h6 {
     transform: translateX(-20em);
     display: none;
     transition: display 2s;
+    opacity: 0;
   }
   .bar {
     display: none;
@@ -566,157 +568,6 @@ section h6 {
   }
   #arr-2 {
     top: 40%;
-    right: 0;
-  }
-  .thumbnails {
-    display: none;
-  }
-  #header {
-    margin-top: -2em;
-  }
-  #title {
-    margin-top: 0;
-    width: 360px;
-  }
-  section h6 {
-    font-size: 1em;
-    line-height: 1.3em;
-    color: hsl(219deg, 9%, 45%);
-    font-weight: 400;
-  }
-  .discount {
-    width: 70%;
-  }
-  .discount p {
-    margin-left: -3em;
-  }
-  #crossed {
-    margin: -2.7em 0 0 0em;
-    float: right;
-    width: 120px;
-  }
-  #add {
-    position: relative;
-    top: 3em;
-    width: 200px;
-  }
-  #add ul {
-    justify-content: space-between;
-    width: 300px;
-    margin-left: 1em;
-  }
-  #cart-btn {
-    position: absolute;
-    top: 6em;
-    width: 320px;
-    height: 4em;
-    margin-left: 1em;
-  }
-  #items {
-    left: -2em;
-  }
-  .card {
-    right: -2.5em;
-    width: 330px;
-    top: 5em;
-    box-shadow: none;
-    z-index: 998;
-  }
-}
-@media screen and (width: 414px) {
-  .app {
-    width: 414px;
-  }
-  #mobile-view {
-    display: block;
-    z-index: 1000;
-  }
-  .nav-translate {
-    transform: translateX(0);
-    display: block;
-  }
-  nav ul {
-    flex-direction: column;
-    position: absolute;
-    z-index: 999;
-    top: 0;
-    background-color: hsl(0deg, 0%, 100%);
-    width: 200px;
-    min-height: 200vh;
-    padding: 5em 1em 0 0;
-    gap: 1em;
-    transform: translateX(-20em);
-    display: none;
-    transition: display 2s;
-  }
-  .bar {
-    display: none;
-  }
-  nav li a {
-    color: hsl(220deg, 13%, 13%);
-    font-weight: 700;
-  }
-  #nav-logo {
-    height: 20px;
-    margin: 1.5em 0 0 3em;
-  }
-  .nav-img {
-    min-width: 40px;
-    margin-left: 101px;
-  }
-  #avatar {
-    top: -3.6em;
-  }
-  #top-cart-container {
-    width: 20%;
-    margin-top: 0.2em;
-  }
-  .op {
-    opacity: 0;
-  }
-  #main-img {
-    display: none;
-  }
-  section {
-    margin: 120% 0 0 0%;
-    height: 100vh;
-    width: 370px;
-  }
-  #toggle {
-    display: none;
-  }
-  #lightbox {
-    display: block;
-    left: 0;
-    position: absolute;
-    top: 4em;
-    width: 100%;
-    z-index: 100;
-    height: 300px;
-  }
-  #slider {
-    width: 350px;
-    height: 150%;
-    margin: 0;
-    z-index: -1;
-  }
-  .slider-img {
-    height: 100%;
-    border-radius: 0;
-    left: -7em;
-    min-width: 600px;
-    top: 5em;
-    -o-object-fit: contain;
-       object-fit: contain;
-    transform: scale(1.5);
-    z-index: -1;
-  }
-  #arr-1 {
-    top: 60%;
-    left: 0;
-  }
-  #arr-2 {
-    top: 60%;
     right: 0;
   }
   .thumbnails {
