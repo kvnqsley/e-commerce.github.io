@@ -272,6 +272,8 @@ if (window.innerWidth<=600) {
     
     }
   )
+
+  closeBtn.classList.remove('display')
 }
 
 
