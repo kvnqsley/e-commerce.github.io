@@ -222,10 +222,10 @@ switch (productIndex) {
 //for mobile design
 
 
-mobileToggle.addEventListener(
+menuBtn.addEventListener(
   'click',()=>{
     menuBtn.classList.toggle('display');
-    closeBtn.classList.toggle('display');
+ 
     // app.classList.toggle('dim');
  
 
@@ -234,17 +234,35 @@ const dimAll=[mainEl,footerEl,lightbox,];
 dimAll.forEach(element => {
   element.classList.toggle('dim')
 });
-  if (menuBtn.classList.contains('display')===true) {
+ if (menuBtn.classList.contains('display')===true) {
     sideNav.classList.add('nav-translate')
     
   }
   else{
     sideNav.classList.remove('nav-translate')
   }
-    
-  
-  }
+ }
 )
+
+closeBtn.addEventListener(
+  'click',()=>{
+    menuBtn.classList.toggle('display');
+  
+    if (menuBtn.classList.contains('display')===true) {
+      sideNav.classList.add('nav-translate')
+      
+    }
+    else{
+      sideNav.classList.remove('nav-translate')
+    }
+ 
+
+    //selecting all components to dim when mobile menu is triggered
+const dimAll=[mainEl,footerEl,lightbox,];
+dimAll.forEach(element => {
+  element.classList.toggle('dim')
+});
+  })
 
 if (window.innerWidth<=600) {
   topCart.addEventListener(
